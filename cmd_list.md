@@ -12,7 +12,8 @@ initiate TM as <name> | this initiates the turing machine with name '<name>'
 <name>.initiate_again | this restarts the Turing MAchine <name> (restarts the machine state & machine tape)
 
 
-###Notes:
+Notes:
+---
   * Directions can be only 'R' or 'L' (Right & Left - respectively)
   * The Machine must be initiated (initiate TM as <>) before going with anyother commands
   * All commands must be prefixed by the machine name - This enables to have multiple machines intialised in the same code file/console
