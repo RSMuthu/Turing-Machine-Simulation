@@ -1,0 +1,28 @@
+# machine to convert a string of A's and B's to
+# all A's and accept
+
+initiate TM as muthu
+
+muthu.states = (A, B)
+
+muthu.initial_state = A
+
+muthu.final_states = (B)
+
+#transition_funtions
+
+muthu.T(A,a) => (A,a,R)
+muthu.T(A,b) => (A,a,R)
+muthu.T(A,_) => (B,_,L)
+
+muthu.display_transition_function
+
+muthu.input = abbabb
+
+muthu.run_TM
+
+muthu.read_input
+
+muthu.initiate_again
+
+muthu.run_TM

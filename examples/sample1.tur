@@ -1,0 +1,22 @@
+# machine to convert binary input string of 1's and 0's to
+# its complementary
+
+initiate TM as done
+
+done.states = (q1, q2)
+
+done.initial_state = q1
+
+done.final_states = (q2)
+
+#transition_funtions
+
+done.T(q1,1) => (q1,0,R)
+done.T(q1,0) => (q1,1,R)
+done.T(q1,_) => (q2,_,L)
+
+done.display_transition_function
+
+done.input = 001101
+
+done.run_TM
