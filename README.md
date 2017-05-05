@@ -1,4 +1,3 @@
-########################################################
 Turing Machine Simulation
 ########################################################
 
@@ -7,7 +6,7 @@ The Commands used for the Turing Machine Simulation are available in the 'cmd_li
 PreRequesite For using Executable file
 -----------------------------------------
 OS: Windows
------------------------------------------
+
 
 There are two ways in which we can run the Simulation
 
@@ -29,13 +28,12 @@ _______________________________
 ---> Turing Machine Simulation Console appears.
 ---> Now you can Run the Turing Machine Commands, just as we run Python commands in the Python Console.
 
-############################################################
+
 
 PreRequesite For Working with Source code
 -----------------------------------------
 OS: any
 Python 2.7
------------------------------------------
 
 _______________________________
 #1 - Executing from Source code
@@ -45,4 +43,4 @@ _______________________________
 ---> Open the command prompt and navigate to that cloned folder.
 ---> Run the command "python main.py" (for Turing machine Console) or "python main.py <file_name>.tur" (for running a '.tur' file)
 
-#############################################################
+
