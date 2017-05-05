@@ -3,21 +3,8 @@ from machine_tape import MachineTape
 import sys
 
 """
-The program structure for the TM is created with a dictionary.
-To step algorithm:
-1. Check to see if the length of the string is zero and if we
-are in a final state
-2. If the currentstate is in the final states then raise an Accept
-3. If the currentstate is not in the program then raise an Error
-4. Check the head character
-5. If the head character is not in the program and in the current state then
-raise an Error
-6. Retrieve from the dictionary the dest_state, char_out, and movement
-7. set the current state to the new state
-8. write the tape, and move the head
-
 Program Layout:
-[state][char_in] --> [(dest_state, char_out, movement)]
+[state][char_in] --> (dest_state, char_out, movement)
 """
 
 class TuringMachine:
@@ -75,16 +62,28 @@ class TuringMachine:
             return True
 
     def step(self):
-        """ Steps 1 - 3 """
+        """
+        Step 1. Check to see if the length of the string is zero and if we
+        are in a final state
+        Step 2. If the currentstate is in the final states then raise an Accept
+        Step 3. If the currentstate is not in the program then raise an Error
+        """
         if self.lenStr == 0 and self.state in self.fstates: raise TuringAcceptException(self.states[self.state])
         if self.state in self.fstates: raise TuringAcceptException(self.states[self.state])
-        if self.state not in self.program.keys(): raise TuringErrorException
+        if self.state not in self.program: raise TuringErrorException
 
-        """ Steps 4 and 5 """
+        """
+        Step 4. Check the head character
+        Step 5. If the head character is not in the program and in the current state then
+        raise an Error
+        """
         head = self.tape.read()
-        if head not in self.program[self.state].keys(): raise TuringErrorException
+        if head not in self.program[self.state]: raise TuringErrorException
 
-        """ Steps 6 and 7 """
+        """
+        Step 6. Retrieve from the dictionary the dest_state, char_out, and movement
+        Step 7. set the current state to the new state
+        """
         # execute transition
         (dest_state, char_out, movement) = self.program[self.state][head]
 
@@ -93,7 +92,9 @@ class TuringMachine:
         self.state = dest_state
         self.step_count += 1
         try:
-            """ Step 8 """
+            """
+            Step 8. write the tape, and move the head
+            """
             self.tape.move(head, char_out, movement)
         except MachineTapeException, s:
             print s
