@@ -2,12 +2,12 @@
 Turing Machine Simulation
 ########################################################
 
+The Commands used for the Turing Machine Simulation are available in the 'cmd_list.txt' file.
+
 PreRequesite For using Executable file
 -----------------------------------------
 OS: Windows
 -----------------------------------------
-
-The Commands used for the Turing Machine Simulation are available in the 'cmd_list.txt' file.
 
 There are two ways in which we can run the Simulation
 
