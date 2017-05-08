@@ -1,15 +1,15 @@
 Commands/Statements | Purpose
 ---|---
-initiate TM as <name> | this initiates the turing machine with name '<name>'
-<name>.states = (S1, S2, ...) | adds the lists of all states S1, S2, ... for the machine <name> to work on
-<name>.initial_state = S | to add a state S as initial_state to the machine <name>
-<name>.final_states = (S1, S2, ...) | to add list of states as final_states S1,S2,... to the machine <name>
-<name>.T(S1,i) => (S2, o, D) | adds corresponding transition function (from state 'S1' on i/p 'i' To state 'S2' and write 'o', then move to direction 'D') into the transition table
-<name>.display_transition_function | to display the all transition functions added up previously to the machine <name>
-<name>.input = abbabb | to give input "abbabb" to machine <name> without any prompts
-<name>.read_input | to get prompt for reading input for the machine <name>
-<name>.run_TM | run the machine <name> with the transition funtions provided
-<name>.initiate_again | this restarts the Turing MAchine <name> (restarts the machine state & machine tape)
+initiate TM as m_name | this initiates the turing machine with name 'm_name'
+m_name.states = (S1, S2, ...) | adds the lists of all states S1, S2, ... for the machine 'm_name' to work on
+m_name.initial_state = S | to add a state S as initial_state to the machine 'm_name'
+m_name.final_states = (S1, S2, ...) | to add list of states as final_states S1,S2,... to the machine 'm_name'
+m_name.T(S1,i) => (S2, o, D) | adds corresponding transition function (from state 'S1' on i/p 'i' To state 'S2' and write 'o', then move to direction 'D') into the transition table of the machine 'm_name'
+m_name.display_transition_function | to display the all transition functions added up previously to the machine 'm_name'
+m_name.input = abbabb | to give input "abbabb" to machine 'm_name' without any prompts
+m_name.read_input | to get prompt for reading input for the machine 'm_name'
+m_name.run_TM | run the machine 'm_name' with the transition funtions provided
+m_name.initiate_again | this restarts the Turing MAchine 'm_name' (restarts the machine state & machine tape)
 
 
 Notes:
