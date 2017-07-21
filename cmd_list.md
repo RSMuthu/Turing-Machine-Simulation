@@ -9,6 +9,7 @@ m_name.display_transition_function | to display the all transition functions add
 m_name.input = abbabb | to give input "abbabb" to machine 'm_name' without any prompts
 m_name.read_input | to get prompt for reading input for the machine 'm_name'
 m_name.run_TM | run the machine 'm_name' with the transition funtions provided
+m_name.run_TM_in_step | run the machine 'm_name' in step-by-step (user acknowledge each step) with the transition funtions provided.
 m_name.initiate_again | this restarts the Turing MAchine 'm_name' (restarts the machine state & machine tape)
 
 

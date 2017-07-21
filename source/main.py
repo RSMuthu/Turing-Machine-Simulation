@@ -52,7 +52,7 @@ def main():
             except (IOException, TypeException, SyntaxRecogException, MachineInitException) as s:
                 print s
     except (KeyboardInterrupt, EOFError) as x:
-        print 'print "\nTuring Machine Simulator Terminates ....\n"'
+        print "\nTuring Machine Simulator Terminates ....\n"
 
 if __name__ == "__main__":
     main()

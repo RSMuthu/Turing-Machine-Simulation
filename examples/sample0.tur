@@ -25,4 +25,4 @@ muthu.read_input
 
 muthu.initiate_again
 
-muthu.run_TM
+muthu.run_TM_in_step

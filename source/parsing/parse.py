@@ -60,12 +60,15 @@ class parser:
         print 'MK --> Transition function Added'
 
     def inp_reader(self, mac, inp, get):
-        if mac not in self.machine:
-            raise MachineInitException(self.line_count)
-        if get:
-            inp = raw_input('Enter The Input String: ')
-        self.machine[mac].add_input(inp)
-        print "\nMK --> Input added to the machine tape\n"
+        try:
+            if mac not in self.machine:
+                raise MachineInitException(self.line_count)
+            if get:
+                inp = raw_input('Enter The Input String: ')
+            self.machine[mac].add_input(inp)
+            print "\nMK --> Input added to the machine tape\n"
+        except KeyboardInterrupt:
+            print "\nTuring Machine Simulator Terminates ....\n"
 
     def parse(self, inp):
         inp = re.sub(r'\s+', " ", inp)
@@ -98,11 +101,17 @@ class parser:
                     raise MachineInitException(self.line_count)
                 self.machine[m.group(1)].disp_transition_fn()
                 return None
+            m = re.match(r'([a-zA-Z_][a-zA-Z0-9_]*)\.run_TM_in_step',inp)
+            if m:
+                if m.group(1) not in self.machine:
+                    raise MachineInitException(self.line_count)
+                self.machine[m.group(1)].execute(True)
+                return None
             m = re.match(r'([a-zA-Z_][a-zA-Z0-9_]*)\.run_TM',inp)
             if m:
                 if m.group(1) not in self.machine:
                     raise MachineInitException(self.line_count)
-                self.machine[m.group(1)].execute()
+                self.machine[m.group(1)].execute(False)
                 return None
             m = re.match(r'([a-zA-Z_][a-zA-Z0-9_]*)\.input\s?=\s?(\w+)',inp)
             if m:

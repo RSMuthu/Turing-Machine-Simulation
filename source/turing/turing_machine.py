@@ -61,7 +61,7 @@ class TuringMachine:
             print s
             return True
 
-    def step(self):
+    def step(self, stepper):
         """
         Step 1. Check to see if the length of the string is zero and if we
         are in a final state
@@ -86,7 +86,8 @@ class TuringMachine:
         """
         # execute transition
         (dest_state, char_out, movement) = self.program[self.state][head]
-
+        if stepper and self.step_count > 1 :
+            raw_input("Press Enter To Continue ...")
         print '\nStep ', self.step_count, ':'
         print "Transition: " + u'\u03B4' + "("+ self.states[self.state]+", '" + head+"') => ("+self.states[dest_state] + ", '"+char_out+"', '" + movement + "')"
         self.state = dest_state
@@ -100,7 +101,7 @@ class TuringMachine:
             print s
             return True
 
-    def execute(self):
+    def execute(self, stepper):
         """ The TM will keep stepping forever until the TM accepts or rejects.
         This does allow for looping TM's """
         try:
@@ -114,10 +115,12 @@ class TuringMachine:
                 raise NoInputException
             while 1:
                 self.tape.show()
-                self.step()
+                self.step(stepper)
         except (NoInitStateException, NoFinalStateException, TuringErrorException, NoTransitionsException, TuringAcceptException, NoInputException), s:
             print s
             return True
+        except KeyboardInterrupt:
+            print "\nTuring Machine Simulator Terminates ....\n"
 
     def disp_transition_fn(self):
         try:
